@@ -1,0 +1,17 @@
+.git
+.env*
+!.env.example
+.venv
+**/__pycache__
+*.pyc
+.pytest_cache
+.coverage
+target
+logs
+dbt_packages
+.dagster
+.user.yml
+dist
+.openai
+.DS_Store
+

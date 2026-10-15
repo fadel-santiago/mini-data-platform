@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: sales_orders
+    description: Une ligne par commande non annulee avec chiffre d'affaires et marge.
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: customer_id
+        data_tests: [not_null]
+      - name: revenue
+        data_tests: [not_null]
+  - name: inventory_status
+    description: Etat courant des stocks et recommandation de reapprovisionnement.
+    columns:
+      - name: product_id
+        data_tests: [unique, not_null]
+      - name: stock_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['rupture', 'a_reapprovisionner', 'sain']
+  - name: accounts_receivable
+    description: Factures, encours et retards de paiement.
+    columns:
+      - name: invoice_id
+        data_tests: [unique, not_null]
+      - name: days_late
+        data_tests: [not_null]
+  - name: executive_kpis
+    description: Indicateurs de synthese pour le dashboard de direction.
+

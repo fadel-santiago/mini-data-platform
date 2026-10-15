@@ -1,0 +1,13 @@
+product_id,product_name,category,stock_quantity,reorder_point,unit_cost,updated_at
+P001,Chaise ergonomique,mobilier,0,8,118.00,2026-10-11T08:00:00+00:00
+P002,Bureau reglable,mobilier,4,4,285.00,2026-10-11T08:01:00+00:00
+P003,Caisson mobile,mobilier,62,15,72.00,2026-10-11T08:02:00+00:00
+P004,Ecran 27 pouces,informatique,18,12,168.00,2026-10-11T08:03:00+00:00
+P005,Station accueil USB-C,informatique,7,10,76.00,2026-10-11T08:04:00+00:00
+P006,Clavier compact,informatique,94,20,31.00,2026-10-11T08:05:00+00:00
+P007,Lampe de bureau,accessoires,12,12,26.00,2026-10-11T08:06:00+00:00
+P008,Support ordinateur,accessoires,0,6,22.00,2026-10-11T08:07:00+00:00
+P009,Table reunion,mobilier,5,3,410.00,2026-10-11T08:08:00+00:00
+P010,Webcam HD,informatique,38,9,43.00,2026-10-11T08:09:00+00:00
+P011,Casque audio,informatique,81,14,54.00,2026-10-11T08:10:00+00:00
+P012,Tableau acoustique,accessoires,9,10,95.00,2026-10-11T08:11:00+00:00

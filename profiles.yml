@@ -1,0 +1,13 @@
+pme_data_stack:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | int }}"
+      user: "{{ env_var('POSTGRES_USER', 'pme') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'pme_demo') }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'pme_warehouse') }}"
+      schema: analytics
+      threads: 4
+
