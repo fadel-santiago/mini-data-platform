@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-17 — Vérification finale O1
+
+- `cp .env.example .env`, `make demo` et `make test` exécutés depuis un clone local propre avec projet Compose, ports et volumes isolés ;
+- 4 tests Python, 10 modèles dbt, 23 tests dbt et 5 contrôles métier réussis ;
+- second chargement inchangé : 0 ligne ingérée pour chacune des cinq sources ;
+- persistance PostgreSQL confirmée après recréation des conteneurs sans suppression des volumes ;
+- Streamlit sain (`/_stcore/health` : `ok`) et Dagster accessible (HTTP 200) ;
+- génération de démonstration rendue déterministe et affichage des ports corrigé.
+
 ## 2026-10-15 — Dépôt portfolio isolé
 
 - copie autonome créée sans modifier le workspace source ;

@@ -12,7 +12,7 @@ Ce dépôt est un démonstrateur local avec données synthétiques. Il n'est pas
 - contrats stricts sur les colonnes CSV et conversions de types ;
 - contraintes de clés et tests d'intégrité référentielle ;
 - séparation des schémas `raw`, `metadata`, `staging`, `marts` et `observability` ;
-- images et versions Python épinglées pour la reproductibilité.
+- dépendances Python épinglées ; images de base limitées à une version majeure, mais non verrouillées par digest.
 
 ## Menaces et limites connues
 

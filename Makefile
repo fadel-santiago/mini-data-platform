@@ -1,5 +1,7 @@
 .PHONY: help build up down demo pipeline test logs clean-data
 
+DEMO_AS_OF ?= 2026-10-11
+
 help:
 	@echo "make demo       Lance la stack puis charge et transforme les donnees"
 	@echo "make pipeline   Rejoue le pipeline incremental"
@@ -14,9 +16,9 @@ up:
 	docker compose up -d warehouse orchestrator dashboard
 
 demo: up
-	docker compose run --rm orchestrator python scripts/generate_demo_data.py
+	docker compose run --rm orchestrator python scripts/generate_demo_data.py --as-of $(DEMO_AS_OF)
 	docker compose run --rm orchestrator python -m pme_data_stack.cli pipeline
-	@echo "Dashboard: http://localhost:8501 | Dagster: http://localhost:3000"
+	@echo "Dashboard: http://$$(docker compose port dashboard 8501) | Dagster: http://$$(docker compose port orchestrator 3000)"
 
 pipeline:
 	docker compose run --rm orchestrator python -m pme_data_stack.cli pipeline

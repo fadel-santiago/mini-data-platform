@@ -15,7 +15,7 @@ cp .env.example .env
 make demo
 ```
 
-`make demo` démarre PostgreSQL, Dagster et Streamlit, régénère les données synthétiques puis exécute ingestion, dbt et qualité.
+`make demo` démarre PostgreSQL, Dagster et Streamlit, régénère le scénario synthétique déterministe puis exécute ingestion, dbt et qualité. La date de référence par défaut est `2026-10-11`, identique aux fixtures versionnées ; utiliser `make demo DEMO_AS_OF=YYYY-MM-DD` pour tester volontairement une autre période.
 
 - dashboard : http://127.0.0.1:8501
 - Dagster : http://127.0.0.1:3000

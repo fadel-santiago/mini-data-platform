@@ -108,6 +108,8 @@ cp .env.example .env
 make demo
 ```
 
+Le scénario synthétique est régénéré à une date de référence fixe afin que cette commande ne modifie pas les fixtures versionnées. Une autre date peut être testée explicitement avec `make demo DEMO_AS_OF=YYYY-MM-DD`.
+
 | Service | Adresse locale |
 |:--|:--|
 | **Orbit · Dashboard** | http://127.0.0.1:8501 |
@@ -124,7 +126,7 @@ Lancer la suite de tests :
 make test
 ```
 
-**Dernière vérification rapportée : 15 octobre 2026** — environnement Docker local.
+**Dernière vérification rapportée : 17 octobre 2026** — clone local propre, projet Compose et volumes isolés.
 
 | Vérification | Résultat observé |
 |:--|--:|
