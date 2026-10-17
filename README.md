@@ -18,6 +18,7 @@ Démonstrateur de bout en bout : **ingestion incrémentale**, **modélisation an
 </p>
 
 <p>
+  <a href="https://github.com/fadel-santiago/mini-data-platform/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/fadel-santiago/mini-data-platform/actions/workflows/ci.yml/badge.svg?branch=main" /></a>
   <img alt="Python tests: 4 passing" src="https://img.shields.io/badge/Python_tests-4%2F4_passing-168F67?style=flat-square" />
   <img alt="dbt tests: 23 passing" src="https://img.shields.io/badge/dbt_tests-23%2F23_passing-168F67?style=flat-square" />
   <img alt="Business checks: 5 passing" src="https://img.shields.io/badge/Business_checks-5%2F5_passing-168F67?style=flat-square" />
@@ -25,6 +26,13 @@ Démonstrateur de bout en bout : **ingestion incrémentale**, **modélisation an
 </p>
 
 [**Aperçu**](#aperçu) · [**Architecture**](#architecture) · [**Démarrage**](#démarrage-rapide) · [**Vérification**](#vérification) · [**Documentation**](#documentation)
+
+<!--
+RESSOURCES PUBLIQUES FUTURES
+Ajouter ici, uniquement après publication et vérification, les liens définitifs vers :
+- l'étude de cas du site portfolio ;
+- la vidéo de démonstration.
+-->
 
 </div>
 
@@ -136,6 +144,7 @@ make test
 | Contrôles métier | **5 / 5** réussis |
 | Seconde ingestion des mêmes sources | **0** nouvelle ligne |
 | État des services | PostgreSQL sain, Streamlit et Dagster accessibles |
+| CI GitHub Actions | **réussie** sur `main` |
 
 **Jeu de données synthétique utilisé :** 16 clients, 84 commandes, 64 factures et 12 références produit. Ces volumes décrivent le jeu de démonstration, pas une activité réelle ni un benchmark de performance.
 
@@ -176,7 +185,7 @@ mini-data-platform/
 > [!IMPORTANT]
 > **Projet de portfolio, non destiné à la production en l'état.** Toutes les données métier affichées sont synthétiques. Aucun résultat client ni gain de productivité réel n'est revendiqué.
 
-Le démonstrateur utilise des exports locaux et une seule machine. Avant un usage en production, il faudrait notamment traiter l'authentification, les rôles et permissions, TLS, les sauvegardes, la supervision et les alertes, la CI/CD, les connecteurs réels et les exigences de disponibilité.
+Le démonstrateur utilise des exports locaux et une seule machine. Avant un usage en production, il faudrait notamment traiter l'authentification, les rôles et permissions, TLS, les sauvegardes, la supervision et les alertes, le déploiement automatisé, les connecteurs réels et les exigences de disponibilité.
 
 ---
 
