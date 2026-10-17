@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      COMPOSE_PROJECT_NAME: orbit-ci-${{ github.run_id }}-${{ github.run_attempt }}
+      POSTGRES_HOST_PORT: "15432"
+      DAGSTER_HOST_PORT: "13000"
+      DASHBOARD_HOST_PORT: "18501"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Configure synthetic demo
+        run: cp .env.example .env
+
+      - name: Run demo pipeline
+        run: make demo
+
+      - name: Run tests and incremental pipeline
+        run: make test
+
+      - name: Clean up Docker resources
+        if: always()
+        run: docker compose down -v --remove-orphans
