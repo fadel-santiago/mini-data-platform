@@ -30,5 +30,5 @@ Orbit est une mini-plateforme Data destinée aux PME qui consolide des exports C
 - utiliser uniquement le jeu synthétique et masquer toute notification système ;
 - capturer le dashboard en vue large : KPI, stocks, recouvrement et qualité ;
 - capturer Dagster sur le job et son graphe d'étapes ;
-- nommer les fichiers `docs/dashboard-overview.png` et `docs/dagster-pipeline.png` ;
+- réutiliser les fichiers existants `docs/screenshots/dashboard1.png` à `dashboard4.png` et `docs/screenshots/dagster-pipeline.png` ;
 - vérifier lisibilité, date de démonstration et absence de données privées avant publication.

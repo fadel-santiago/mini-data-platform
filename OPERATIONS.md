@@ -2,7 +2,7 @@
 
 ## Prérequis et données
 
-- Docker Desktop avec Docker Compose ;
+- Docker Desktop avec Docker Compose 2.24.0 ou ultérieur (`env_file.required`) ;
 - ports locaux 5432, 3000 et 8501 disponibles ;
 - aucune donnée réelle : `data/sources` contient uniquement le scénario synthétique.
 
@@ -30,7 +30,9 @@ make logs       # logs Dagster et Streamlit
 make down       # arrête les services et conserve les volumes
 ```
 
-`make clean-data` supprime le volume PostgreSQL local. Ne l'utiliser que pour réinitialiser volontairement la démonstration.
+`make clean-data` exécute `docker compose down -v` : il supprime les volumes PostgreSQL **et Dagster** du projet Compose sélectionné. Ne l'utiliser que pour réinitialiser volontairement cet environnement synthétique. `make down` conserve ces volumes.
+
+Un changement de dossier ou de nom de projet Compose peut sélectionner d'autres volumes. Avant de déplacer une installation existante de `mini-data-platform` vers `orbit`, conserver son ancien `COMPOSE_PROJECT_NAME` et vérifier les volumes ; le renommage GitHub ne migre pas les données locales. Les commandes PowerShell et les limites de portabilité sont décrites dans le [README anglais](README.md#quick-start).
 
 ## Fournir des données
 

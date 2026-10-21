@@ -40,4 +40,4 @@ Ces indicateurs décrivent la valeur métier à évaluer lors d'une adaptation, 
 
 ## Hors périmètre actuel
 
-Connecteurs SaaS, données temps réel, authentification, RBAC, haute disponibilité, sauvegardes, alerting externe, chiffrement géré, CI/CD et validation réglementaire. Voir [SECURITY.md](SECURITY.md) et [OPERATIONS.md](OPERATIONS.md).
+Connecteurs SaaS, données temps réel, authentification, RBAC, haute disponibilité, sauvegardes, alerting externe, chiffrement géré, déploiement continu (CD) et validation réglementaire. La vérification CI GitHub Actions est déjà présente ; elle n'implique pas un déploiement de production. Voir [SECURITY.md](SECURITY.md) et [OPERATIONS.md](OPERATIONS.md).

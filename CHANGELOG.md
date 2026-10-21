@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-21 — English-first documentation, branding and portability audit
+
+- Rewrote `README.md` as **ORBIT — Data Engineering & Business Intelligence**; retained the French overview in `README.fr.md`, five screenshots, architecture, setup and dated verification evidence.
+- Documented Compose 2.24.0+, PowerShell equivalents (execution unverified), volume/project-name precautions, dashboard filter scope and date-dependent receivables.
+- Added `docs/PORTABILITY_AUDIT.md` with confirmed findings, OS verification boundaries, licensing/dependency/security limits, remaining French material and branding recommendations.
+- Read-only GitHub checks confirmed the canonical name `fadel-santiago/orbit`, a remote MIT license missing locally, and the existing successful Ubuntu CI run from 17 October. No repository rename or Git synchronization was performed.
+- Corrected the French operations guide's volume-deletion warning, the product document's CI/CD scope and the portfolio screenshot paths.
+- Lightweight checks passed: relative links/anchors and image-file existence, fenced blocks, `git diff --check`, and `docker compose --env-file .env.example config --no-env-resolution --quiet` using Compose 5.3.1. The existing public case-study URL returned HTTP 200.
+- No application/configuration/dependency changes, new pipeline tests, Docker builds/runs, media generation, commits, pushes or publication. Existing untracked video scripts were preserved.
+
 ## 2026-10-17 — Vérification finale O1
 
 - `cp .env.example .env`, `make demo` et `make test` exécutés depuis un clone local propre avec projet Compose, ports et volumes isolés ;
