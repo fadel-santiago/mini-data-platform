@@ -7,7 +7,7 @@ help:
 	@echo "make pipeline   Rejoue le pipeline incremental"
 	@echo "make test       Lance les tests Python et dbt"
 	@echo "make down       Arrete les services"
-	@echo "make clean-data Supprime uniquement le volume PostgreSQL de demo"
+	@echo "make clean-data ATTENTION : supprime les volumes PostgreSQL ET Dagster du projet Compose"
 
 build:
 	docker compose build

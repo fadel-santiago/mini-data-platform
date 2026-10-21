@@ -201,7 +201,8 @@ def _watermark(connection: Connection, source_name: str) -> datetime | None:
 def ingest_source(connection: Connection, data_dir: Path, spec: SourceSpec) -> int:
     _create_raw_table(connection, spec)
     rows = _read_csv(data_dir / spec.filename, spec)
-    delta = filter_incremental_rows(rows, _watermark(connection, spec.name), spec.watermark_column)
+    previous_watermark = _watermark(connection, spec.name)
+    delta = filter_incremental_rows(rows, previous_watermark, spec.watermark_column)
 
     if delta:
         columns = list(spec.columns)
@@ -225,8 +226,8 @@ def ingest_source(connection: Connection, data_dir: Path, spec: SourceSpec) -> i
             cursor.executemany(statement, values)
 
     new_watermark = max(
-        (row[spec.watermark_column] for row in rows),
-        default=_watermark(connection, spec.name),
+        (row[spec.watermark_column] for row in delta),
+        default=previous_watermark,
     )
     with connection.cursor() as cursor:
         cursor.execute(
